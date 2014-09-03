@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+  <body>
+       
+       
+       {% block content %} 
+                    {% switch "now" | date("D") %}
+
+                    {% case "Mon" %}
+                         {% for entry in craft.entries.section('specials').limit(1).slug('monday') %}    
+                        <h1>{{ entry.title}}</h1>
+
+                        {{ entry.body }}
+
+                      {% endfor %}
+
+                    {% case "Tue" %}
+                         {% for entry in craft.entries.section('specials').limit(1).slug('tuesday') %}    
+                        <h1>{{ entry.title}}</h1>
+
+                        {{ entry.body }}
+
+                      {% endfor %}
+
+                    {% case "Wed" %}
+                        {% for entry in craft.entries.section('specials').limit(1).slug('wednesday') %}    
+                        <h1>{{ entry.title}}</h1>
+
+                        {{ entry.body }}
+
+                      {% endfor %}
+
+                      {% case "Thu" %}
+                         {% for entry in craft.entries.section('specials').limit(1).slug('thursday') %}    
+                        <h1>{{ entry.title}}</h1>
+
+                        {{ entry.body }}
+
+                      {% endfor %}
+
+                      {% case "Fri" %}
+                         {% for entry in craft.entries.section('specials').limit(1).slug('friday') %}    
+                        <h1>{{ entry.title}}</h1>
+
+                        {{ entry.body }}
+
+                      {% endfor %}
+
+                      {% case "Sat" %}
+                         {% for entry in craft.entries.section('specials').limit(1).slug('saturday') %}    
+                        <h1>{{ entry.title}}</h1>
+
+                        {{ entry.body }}
+
+                      {% endfor %}
+
+                      {% case "Sun" %}
+                         {% for entry in craft.entries.section('specials').limit(1).slug('sunday') %}    
+                        <h1>{{ entry.title}}</h1>
+
+                        {{ entry.body }}
+
+                      {% endfor %}
+
+                {% endswitch %}
+                    {% endblock %}
+  </body>
+</html>
